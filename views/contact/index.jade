@@ -1,0 +1,35 @@
+extends ../layout
+append head
+  script(type='text/javascript')
+    $(document).ready(function() {
+      $("table.table.tablesorter.table-bordered").tablesorter({
+        sortList: [[0,0]],
+        theme: 'blue',
+        widgets: ["zebra"],
+        build_headers : {
+         rows    : 1,  // Number of header rows from the csv
+         classes : [], // Header classes to apply to cells
+         text    : [], // Header cell text
+         widths  : [ '15%', '30%', '15%', '40%' ] // set header cell widths
+        },
+        }
+      );
+    });
+
+block content
+  h2.display-data All Contacts
+    a.btn.btn-primary.pull-right(href="/contacts/create") Create a new Contact
+
+  table.table.table.tablesorter.table-bordered(style="width:100%")
+    thead
+      tr
+        th First
+        th Last
+        th Email
+    tbody
+      each contact in contacts
+        tr
+          td
+            a(href="/contacts/" + contact._id + "/detail", title="Detail")= display(contact.first)
+          td= display(contact.last)
+          td= display(contact.email)

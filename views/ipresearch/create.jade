@@ -1,0 +1,89 @@
+extends ../layout
+include ../mixins/form-helpers
+
+block content
+
+  form#ipresearch-form.form-horizontal(action="/ipresearches/create", method="POST")
+    fieldset
+      legend Create a new Ipresearch
+    
+      .control-group
+        mixin label("ifIndex", "Ifindex")        
+        .controls
+          mixin text("ifIndex", ipresearch.ifIndex)
+          mixin errorMessage(ipresearch, 'ifIndex')
+      .control-group
+        mixin label("ifTypeIcon", "Iftypeicon")        
+        .controls
+          mixin text("ifTypeIcon", ipresearch.ifTypeIcon)
+          mixin errorMessage(ipresearch, 'ifTypeIcon')
+      .control-group
+        mixin label("ifName", "Ifname")        
+        .controls
+          mixin text("ifName", ipresearch.ifName)
+          mixin errorMessage(ipresearch, 'ifName')
+      .control-group
+        mixin label("ifDescr", "Ifdescr")        
+        .controls
+          mixin text("ifDescr", ipresearch.ifDescr)
+          mixin errorMessage(ipresearch, 'ifDescr')
+      .control-group
+        mixin label("ifAlias", "Ifalias")        
+        .controls
+          mixin text("ifAlias", ipresearch.ifAlias)
+          mixin errorMessage(ipresearch, 'ifAlias')
+      .control-group
+        mixin label("ifAdminIcon", "Ifadminicon")        
+        .controls
+          mixin text("ifAdminIcon", ipresearch.ifAdminIcon)
+          mixin errorMessage(ipresearch, 'ifAdminIcon')
+      .control-group
+        mixin label("ifOperIcon", "Ifopericon")        
+        .controls
+          mixin text("ifOperIcon", ipresearch.ifOperIcon)
+          mixin errorMessage(ipresearch, 'ifOperIcon')
+      .control-group
+        mixin label("MAC", "Mac")        
+        .controls
+          mixin text("MAC", ipresearch.MAC)
+          mixin errorMessage(ipresearch, 'MAC')
+      .control-group
+        mixin label("IP", "Ip")        
+        .controls
+          mixin text("IP", ipresearch.IP)
+          mixin errorMessage(ipresearch, 'IP')
+      .control-group
+        mixin label("DNS", "Dns")        
+        .controls
+          mixin text("DNS", ipresearch.DNS)
+          mixin errorMessage(ipresearch, 'DNS')
+      .control-group
+        mixin label("VLANs", "Vlans")        
+        .controls
+          mixin text("VLANs", ipresearch.VLANs)
+          mixin errorMessage(ipresearch, 'VLANs')
+      .control-group
+        mixin label("VLANforMAC", "Vlanformac")        
+        .controls
+          mixin text("VLANforMAC", ipresearch.VLANforMAC)
+          mixin errorMessage(ipresearch, 'VLANforMAC')
+      .control-group
+        mixin label("ifSpeed", "Ifspeed")        
+        .controls
+          mixin text("ifSpeed", ipresearch.ifSpeed)
+          mixin errorMessage(ipresearch, 'ifSpeed')
+      .control-group
+        mixin label("ifType", "Iftype")        
+        .controls
+          mixin text("ifType", ipresearch.ifType)
+          mixin errorMessage(ipresearch, 'ifType')
+      .control-group
+        mixin label("TrunkPort", "Trunkport")        
+        .controls
+          mixin text("TrunkPort", ipresearch.TrunkPort)
+          mixin errorMessage(ipresearch, 'TrunkPort')
+
+    .form-actions
+      a.btn.btn-warning(href="/ipresearches") Back
+      | 
+      input.btn.btn-primary(type="submit", value="Create")

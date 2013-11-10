@@ -1,0 +1,53 @@
+extends ../layout
+
+block content
+  script(type='text/javascript')
+    $(document).ready(function() {
+      $("table.table.tablesorter.table-bordered").tablesorter({
+        sortList: [[0,0]],
+        theme: 'blue',
+        widgets: ["zebra"],
+        build_headers : {
+         rows    : 1,  // Number of header rows from the csv
+         classes : [], // Header classes to apply to cells
+         text    : [], // Header cell text
+         widths  : [ '15%', '30%', '15%', '40%' ] // set header cell widths
+        },
+        }
+      );
+    });
+  h2.display-data All Ipresearches
+    a.btn.btn-primary.pull-right(href="/ipresearches/create") Create a new Ipresearch
+
+  table.table.tablesorter.table-bordered.table-striped(style="width:100%")
+    thead
+      tr
+        th IP
+        th Iftypeicon
+        th Host
+        th Descr
+        th Ifalias
+        th Ifadminicon
+        th Ifopericon
+        th MAC
+        th IP
+        th DNS
+        th Vlans
+        th Vlanformac
+    tbody
+      each ipresearch in ipresearches
+
+        tr
+          td
+            a(href="/ipresearches/" + ipresearch._id + "/detail", title="Detail")= display(ipresearch.ifIndex)
+          td= display(ipresearch.ifTypeIcon)
+          td= display(ipresearch.ifName)
+          td= display(ipresearch.ifDescr)
+          td= display(ipresearch.ifAlias)
+          td= display(ipresearch.ifAdminIcon)
+          td= display(ipresearch.ifOperIcon)
+          td= display(ipresearch.MAC)
+          td= display(ipresearch.IP)
+          td= display(ipresearch.DNS)
+          td= display(ipresearch.VLANs)
+          td= display(ipresearch.VLANforMAC)

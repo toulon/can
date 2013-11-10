@@ -1,0 +1,69 @@
+extends ../layout
+
+block content
+  h2.display-data Ipresearch Detail
+
+  .form-actions
+    a.btn.btn-warning(href="/ipresearches") Back
+    |
+    a.btn.btn-primary(href="/ipresearches/" + ipresearch._id + "/edit") Edit
+    |
+    a.btn.btn-danger(href="/ipresearches/" + ipresearch._id + "/delete") Delete
+    table.table.table-bordered
+  table.table.table-bordered
+    tr
+      th Property
+      th Value
+        tr
+          td Ifindex
+          td= display(ipresearch.ifIndex)
+        tr
+          td Iftypeicon
+          td= display(ipresearch.ifTypeIcon)
+        tr
+          td Ifname
+          td= display(ipresearch.ifName)
+        tr
+          td Ifdescr
+          td= display(ipresearch.ifDescr)
+        tr
+          td Ifalias
+          td= display(ipresearch.ifAlias)
+        tr
+          td Ifadminicon
+          td= display(ipresearch.ifAdminIcon)
+        tr
+          td Ifopericon
+          td= display(ipresearch.ifOperIcon)
+        tr
+          td Mac
+          td= display(ipresearch.MAC)
+        tr
+          td Ip
+          td= display(ipresearch.IP)
+        tr
+          td Dns
+          td= display(ipresearch.DNS)
+        tr
+          td Vlans
+          td= display(ipresearch.VLANs)
+        tr
+          td Vlanformac
+          td= display(ipresearch.VLANforMAC)
+        tr
+          td Ifspeed
+          td= display(ipresearch.ifSpeed)
+        tr
+          td Iftype
+          td= display(ipresearch.ifType)
+        tr
+          td Trunkport
+          td= display(ipresearch.TrunkPort)
+
+
+  .form-actions
+    a.btn.btn-warning(href="/ipresearches") Back
+    |
+    a.btn.btn-primary(href="/ipresearches/" + ipresearch._id + "/edit") Edit
+    |
+    a.btn.btn-danger(href="/ipresearches/" + ipresearch._id + "/delete") Delete
